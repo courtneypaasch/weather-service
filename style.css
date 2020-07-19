@@ -1,0 +1,12 @@
+.title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+}
+
+
+.jumbotron-fluid {
+    background-color: rgb(108, 160, 146);
+    height: 150px;
+}
