@@ -7,7 +7,7 @@ $("document").ready(function () {
         console.log(city);
 
         $.ajax({
-            url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=a66005cdeed278c7401c80000cda18a8",
+            url: "HTTPS://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=a66005cdeed278c7401c80000cda18a8",
             method: "GET",
         }).then(function (response) {
             console.log(response);
@@ -32,7 +32,7 @@ $("document").ready(function () {
                 $(".card-body").append("<div>Wind Speed: " + response.wind.speed + "</div><br>");
 
                 $.ajax({
-                    url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=a66005cdeed278c7401c80000cda18a8",
+                    url: "HTTPS://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=a66005cdeed278c7401c80000cda18a8",
                     method: "GET",
                 }).then(function (res) {
                     console.log(res);
@@ -53,7 +53,7 @@ $("document").ready(function () {
 
 
         $.ajax({
-            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=a66005cdeed278c7401c80000cda18a8",
+            url: "HTTPS://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=a66005cdeed278c7401c80000cda18a8",
             method: "GET",
         }).then(function (response) {
             console.log(response);
