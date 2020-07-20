@@ -10,3 +10,25 @@
     background-color: rgb(108, 160, 146);
     height: 150px;
 }
+
+.uvlow {
+    color:white;
+    background: green;
+}
+
+.uvmod {
+    color:black;
+    background: yellow;
+}
+
+.uvhigh {
+    color:white;
+    background: red;
+}
+
+h3 {
+    margin-top: 2%;;
+}
+.fiveDay {
+    margin: 1.5%;
+  }
