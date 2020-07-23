@@ -19,13 +19,6 @@ $("document").ready(function () {
         addCard(city);
         addFiveDay(city);
 
-            $(".list-group-item").on("click", function (event) {
-                var city = $(this).attr('id');
-                console.log('clicked!');
-                addCard(city);
-                addFiveDay(city);
-            })
-
     })
 
     $(".list-group-item").on("click", function (event) {
@@ -76,41 +69,30 @@ function renderCities() {
 }
 
 function setIconCard(city) {
+    var icon;
     $.ajax({
         url: "HTTPS://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=a66005cdeed278c7401c80000cda18a8",
         method: "GET",
     }).then(function (response) {
         console.log(response);
-
-        var weather = response.weather[0].main;
-        var icon = response.weather[0].icon;
-
+        icon = response.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
         var url = $("<img src='" + iconurl + "'></img>");
-        console.log(weather);
-        console.log(icon);
-
         $(".intro").append(url);
     })
 }
 
 function setIconFiveDay(city, arrayNav) {
+    var icon;
     var arrayNav = arrayNav
     $.ajax({
         url: "HTTPS://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=a66005cdeed278c7401c80000cda18a8",
         method: "GET",
     }).then(function (response) {
         console.log(response);
-        console.log(city);
-        console.log(arrayNav);
-        var weather = (response.list[arrayNav].weather[0].icon)
-        var icon = response.list[arrayNav].weather[0].icon;
-
+        icon = response.list[arrayNav].weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
         var url = $("<img src='" + iconurl + "'></img>");
-        console.log(weather);
-        console.log(icon);
-
         $(".icon"+arrayNav).append(url);
     })
 }
