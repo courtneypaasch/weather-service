@@ -47,14 +47,16 @@ function init() {
 function saveSearch() {
     var localCities = cities;
     var newCity = (localStorage.getItem('last search'));
+    var newExists = cities.includes(newCity);
 
+
+    if (newExists === true || !newCity) {
+        return;
+    } else {
     localCities.push(localStorage.getItem('last search'));
     localStorage.setItem("searchHistory", JSON.stringify(localCities));
     $(".city-list").prepend($("<li class='list-group-item' id='" + localStorage.getItem('last search') + "'>" + localStorage.getItem('last search') + "</li>"));
-
-
-
-
+    }
 }
 
 function renderCities() {
